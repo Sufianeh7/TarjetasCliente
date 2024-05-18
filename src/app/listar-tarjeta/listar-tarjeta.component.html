@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-body">
+    <span class="d-flex align-items-center">
+      <h3 class="titulo col-6">LISTAR TARJETAS</h3>
+      <button
+        class="btn btn-primary col-6"
+        (click)="mostrar ? mostrarTarjetas() : ocultarTarjetas()"
+      >
+        {{ mostrar ? "Mostrar Tarjetas" : "Ocultar Tarjetas" }}
+      </button>
+    </span>
+    @if (!mostrar && tarjetas != []) {
+      <div class="d-flex justify-content-center mt-4">
+        <div class="table-responsive">
+          <table class="table table-stripped">
+            <thead>
+              <tr>
+                <th class="text-center"><i class="fa-regular fa-hashtag"></i></th>
+                <th class="text-center"><h5>ID</h5></th>
+                <th class="text-center"><h5>TITULAR</h5></th>
+                <th class="text-center"><h5>Nº TARJETA</h5></th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (item of tarjetas; track $index) {
+                <tr class="mb-4">
+                  <td class="text-center"><p>{{$index+1}}</p></td>
+                  <td class="text-center"><p>{{item._id}}</p></td>
+                  <td class="text-center"><p>{{item.titular}}</p></td>
+                  <td class="text-center"><p>{{item.numeroTarjeta}}</p></td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    }
+  </div>
+</div>
