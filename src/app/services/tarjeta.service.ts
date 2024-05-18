@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class TarjetaService {
 
-  private _URL:string = "http://localhost:3000/api/";
+  private _URL:string = "https://tarjetas-servidor.vercel.app/api/";
 
   constructor(private _http: HttpClient) {
 
